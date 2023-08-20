@@ -1,0 +1,109 @@
+<?php 
+  session_start(); 
+
+  if (!isset($_SESSION['username'])) {
+  	$_SESSION['msg'] = "You must log in first";
+  	header('location: login.php');
+  }
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+  	header("location: login.php");
+  }
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="logo.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maharashtrian Bites|BestOnlineFood.com</title>
+    <link rel="stylesheet" href="CSS/style.css">
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Bree+Serif&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="logo.png" alt="MyonlineMeal.com">
+        </div>
+        <ul>
+            <li class="item"><a href="#home">Home</a></li>
+            <li class="item"><a href="#services-container">Services</a></li>
+            <li class="item"><a href="about.html">About Us</a></li>
+            <li class="item"><a href="#order">Order</a></li>
+            <li class="item"><a href="contact/index.php">Contact us</a></li>
+            <li class="item"><a href="login.php">Login</a></li>
+        </ul>
+    </nav>
+    <section id="home">
+        <h1 class="h-primary">Welcome to Maharashtrian Bites</h1>
+        
+    </section>
+    <section id="services-container">
+        <h1 class="h-primary center">Our Services</h1>
+        <div id="Services">
+            <div class="box">
+                <img src="misal-pav.jpg" alt="">
+                <h2 class="h-secondary center">Food Ordering</h2>
+                <p class="center">
+                    "Ordering food made easy! Enjoy your favorite Maharashtrian dishes from the comfort of your own home with our hassle-free online ordering system."</p>
+            </div>
+            <div class="box">
+                <img src="ing2.jpg" alt="">
+                <h2 class="h-secondary center">Food Catering</h2>
+                <p class="center">Experience the vibrant flavors of Maharashtra with our authentic Maharashtrian style food catering. From spicy vada pav to mouth-watering thalipeeth, we have it all to satisfy your cravings.</p>
+            </div>
+            <div class="box">
+                <img src="img3.jpg" alt="">
+                <h2 class="h-secondary center">Party Orders</h2>
+                <p class="center">"Leave a lasting impression on your guests with our flavorful catering options. From corporate events to weddings, let us take care of the food while you enjoy the celebration!"</p>
+            </div>
+        </div>
+    </section>
+    <section id="order">
+        <h2 class="h-secondary center">Order Now</h2>
+        <section class="items">
+        
+            <div class="item">
+                <img src="pav.jpg">
+                <h4>Pav Bhaji</h4>
+                <button>Order</button>
+            </div>
+            <div class="item">
+                <img src="puranpoli.jpg">
+                <h4>Puran Poli.</h4>
+                <button>Order</button>
+            </div>
+            <div class="item">
+                <img src="sreekhand.jpg">
+                <h4>Sreekhand</h4>
+                <button>Order</button>
+            </div>
+            <div class="item">
+                <img src="vadapav.jpg">
+                <h4>Vada Pav</h4>
+                <button>Order</button>
+            </div>
+            <div class="item">
+                <img src="bhakarvadi.jpg">
+                <h4>Bhakar vadi</h4>
+                <button>Order</button>
+            </div>
+            <div class="item">
+                <img src="sabudana.jpg">
+                <h4>Sabudana khichadi</h4>
+                <button>Order</button>
+            </div>
+        </section>
+    </section>
+    <footer>
+        <div class="center">
+            Copyright &copy; www.Maharashtrianbites.com. All rights reserved!
+        </div>
+    </footer>
+</body>
+</html>
